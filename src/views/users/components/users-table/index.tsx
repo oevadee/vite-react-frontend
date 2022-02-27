@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { deleteUser } from "../../../../api/users";
 import { User } from "../../../../types/user";
 
 const STableWrapper = styled.div`
@@ -9,7 +10,7 @@ const STableWrapper = styled.div`
 
 const STable = styled.table`
   width: 100%;
-  margin-top: 2rem;
+  margin-top: 1rem;
   width: 100%;
   text-align: left;
   border-collapse: collapse;
@@ -39,7 +40,7 @@ const STr = styled.tr`
   }
 `;
 
-const STH = styled.th`
+const STh = styled.th`
   padding: 1.2rem 0.8rem;
   background-color: ${({ theme }) => theme.colors.darkSienna};
   text-transform: uppercase;
@@ -56,21 +57,34 @@ const STd = styled.td`
   }
 `;
 
+const SDeleteButton = styled.button`
+  cursor: pointer;
+  border: none;
+  background: none;
+  img {
+    width: 1.5rem;
+    aspect-ratio: auto;
+  }
+`;
+
 interface Props {
   users: User[];
 }
 
 export const UsersTable = ({ users }: Props) => {
-  const [id, ...rest] = Object.keys(users[0]);
   const columns = ["name", "age", "role"];
+
+  const handleDelete = async (id: string) => await deleteUser(id);
+
   return (
     <STableWrapper>
       <STable>
         <thead>
           <STr>
             {columns.map((el) => (
-              <STH key={el}>{el}</STH>
+              <STh key={el}>{el}</STh>
             ))}
+            <STh />
           </STr>
         </thead>
         <tbody>
@@ -79,7 +93,12 @@ export const UsersTable = ({ users }: Props) => {
               <STr key={id}>
                 <STd>{`${firstName} ${lastName}`}</STd>
                 <STd>{age}</STd>
-                <STd>{role}</STd>
+                <STd>{role || "-"}</STd>
+                <STd>
+                  <SDeleteButton onClick={() => handleDelete(id)}>
+                    <img src="src/assets/ic-delete.png" alt="delete icon" />
+                  </SDeleteButton>
+                </STd>
               </STr>
             ))}
         </tbody>
