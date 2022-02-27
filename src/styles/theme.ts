@@ -4,11 +4,12 @@ export const theme = {
     blackCoffee: "#332125",
     graniteGray: "#665E5F",
     darkSienna: "#450712",
+    darkSiennaHover: "#561823",
     catawba: "#5E2C36",
     white: "#ffffff",
   },
-  fonts: {
-    size: {
+  font: {
+    weight: {
       light: 300,
       regular: 400,
       medium: 500,

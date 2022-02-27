@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { StyledButton } from "../../components/styled-button";
 import { StyledHeader } from "../../components/styled-header";
 import { apiUrl } from "../../contants";
 import { useFetch } from "../../hooks/useFetch";
@@ -16,7 +17,7 @@ export const UsersView = () => {
     <>
       <SUpperWrapper>
         <StyledHeader>Users</StyledHeader>
-        <button>Add user</button>
+        <StyledButton>Add user</StyledButton>
       </SUpperWrapper>
       {users && <UsersTable users={users} />}
     </>
