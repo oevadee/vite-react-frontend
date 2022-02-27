@@ -1,6 +1,6 @@
 import { apiUrl } from "../contants";
 
 export const getAllUsers = async () => {
-  const data = await fetch(`${apiUrl}/users`, { method: "no-cors" });
-  console.log(data);
+  const { body } = await fetch(`http://localhost:8000/users`);
+  return body;
 };

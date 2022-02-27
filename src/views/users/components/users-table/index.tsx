@@ -1,6 +1,12 @@
 import React from "react";
+import { User } from "../../../../types/user";
 
-export const UsersTable = () => {
+interface Props {
+  users: User[] | string;
+}
+
+export const UsersTable = ({ users }: Props) => {
+  console.log(users);
   return (
     <table>
       <thead>
