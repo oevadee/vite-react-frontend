@@ -1,3 +1,5 @@
+import styled from "styled-components";
+
 export const UsersView = () => {
-  return <div>UsersView</div>;
+  return;
 };

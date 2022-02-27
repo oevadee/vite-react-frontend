@@ -1,10 +1,10 @@
-import { UsersView } from "./views/users";
+import { Routes } from "./router/Routes";
 
 function App() {
   return (
-    <div className="App">
-      <UsersView />
-    </div>
+    <>
+      <Routes />
+    </>
   );
 }
 
