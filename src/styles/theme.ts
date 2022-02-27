@@ -7,4 +7,13 @@ export const theme = {
     catawba: "#5E2C36",
     white: "#ffffff",
   },
+  fonts: {
+    size: {
+      light: 300,
+      regular: 400,
+      medium: 500,
+      semibold: 600,
+      bold: 700,
+    },
+  },
 };

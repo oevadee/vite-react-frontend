@@ -15,6 +15,5 @@ export const useFetch = (url: string) => {
     fetchData();
   }, []);
 
-  if (!data) return "No data found";
   return data;
 };

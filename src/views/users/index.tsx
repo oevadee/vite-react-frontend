@@ -1,6 +1,4 @@
-import { useEffect, useState } from "react";
 import styled from "styled-components";
-import { getAllUsers } from "../../api/users";
 import { StyledHeader } from "../../components/styled-header";
 import { apiUrl } from "../../contants";
 import { useFetch } from "../../hooks/useFetch";
@@ -20,7 +18,7 @@ export const UsersView = () => {
         <StyledHeader>Users</StyledHeader>
         <button>Add user</button>
       </SUpperWrapper>
-      <UsersTable users={users} />
+      {users && <UsersTable users={users} />}
     </>
   );
 };

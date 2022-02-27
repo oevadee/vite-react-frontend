@@ -7,9 +7,10 @@ import { theme } from "./styles/theme";
 function App() {
   return (
     <Layout>
-      <Routes />
-      <GlobalStyle />
-      <ThemeProvider theme={theme} />
+      <ThemeProvider theme={theme}>
+        <Routes />
+        <GlobalStyle />
+      </ThemeProvider>
     </Layout>
   );
 }
